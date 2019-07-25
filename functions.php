@@ -1,6 +1,7 @@
 <?php
     //-- import main class
-    $ss_bt_main_class = "";
+    global $ss_bt_main_class;
+    
     if( !class_exists( 'SS_Blank_Theme_Main' ) ) {
         include_once( get_template_directory() . '/inc/ssblanktheme.class.main.php' );
 

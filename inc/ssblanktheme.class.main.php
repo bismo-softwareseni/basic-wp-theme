@@ -20,6 +20,9 @@
             //-- add theme support - title tag ( WP will provide title tag for each page )
             add_theme_support( 'title-tag' );
 
+            //-- add theme support - post thumbnail
+            add_theme_support( 'post-thumbnails' );
+
             //-- register Main Menu & Footer Menu
             register_nav_menus( array(
                 'ssbt-menu-main'    => esc_html__( 'Main Menu', $this->ss_bt_text_domain ),
