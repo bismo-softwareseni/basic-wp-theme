@@ -66,5 +66,14 @@
             //-- bootstrap js
             wp_enqueue_script( 'ssbt-js-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), 'v4.0.0', true );
         }
+
+        //-- function to add meta tags ( so not hard-coded inside header tag )
+        function ssBlankThemeAddMetaTags() {
+    ?>
+            <meta charset="<?php bloginfo( 'charset' ); ?>">
+	        <meta name="viewport" content="width=device-width, initial-scale=1">
+	        <link rel="profile" href="https://gmpg.org/xfn/11">
+    <?php
+        }
     }
 ?>

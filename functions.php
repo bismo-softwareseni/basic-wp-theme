@@ -1,7 +1,7 @@
 <?php
     //-- import main class
     global $ss_bt_main_class;
-    
+
     if( !class_exists( 'SS_Blank_Theme_Main' ) ) {
         include_once( get_template_directory() . '/inc/ssblanktheme.class.main.php' );
 
@@ -23,6 +23,11 @@
         //-- enqueue css and js
         if( method_exists( $ss_bt_main_class, 'ssBlankThemeEnqueueScripts' ) ) {
             add_action( 'wp_enqueue_scripts', array( $ss_bt_main_class, 'ssBlankThemeEnqueueScripts' ) );
+        }
+
+        //-- add meta tags
+        if( method_exists( $ss_bt_main_class, 'ssBlankThemeAddMetaTags' ) ) {
+            add_action( 'wp_head', array( $ss_bt_main_class, 'ssBlankThemeAddMetaTags' ) );
         }
     }
 ?>
