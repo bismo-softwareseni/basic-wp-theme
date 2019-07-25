@@ -60,11 +60,17 @@
             //-- main css
             wp_enqueue_style( 'ssbt-css-main', get_stylesheet_uri() );
 
+            //-- semantic ui css
+            wp_enqueue_style( 'ssbt-css-semantic', get_template_directory_uri() . '/semantic/dist/semantic.min.css', array(), 'v2.4.2', 'all' );
+            
+            //-- semantic ui js
+            wp_enqueue_script( 'ssbt-js-semantic', get_template_directory_uri() . '/semantic/dist/semantic.min.js', array(), 'v2.4.2', 'all' );
+
             //-- bootstrap css
-            wp_enqueue_style( 'ssbt-css-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v4.0.0', 'all' );
+            //wp_enqueue_style( 'ssbt-css-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v4.0.0', 'all' );
 
             //-- bootstrap js
-            wp_enqueue_script( 'ssbt-js-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), 'v4.0.0', true );
+            //wp_enqueue_script( 'ssbt-js-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), 'v4.0.0', true );
         }
 
         //-- function to add meta tags ( so not hard-coded inside header tag )

@@ -11,51 +11,68 @@
     
     //-- header 
 	get_header();
-	
-	get_sidebar( 'left' );
 ?>
 
-    <div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<!-- container -->
+	<div class="ui grid container" style="margin-top: 50px;">
+		<!-- left sidebar -->
+		<div class="three wide column">
+			<?php get_sidebar( 'left' ); ?>
+		</div>
+		<!-- end left sidebar -->
 
-		<?php
-		if ( have_posts() ) :
+		<!-- main content -->
+		<div class="ten wide column">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
 				<?php
-			endif;
+				if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+					if ( is_home() && ! is_front_page() ) :
+						?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
+						<?php
+					endif;
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
 
-			endwhile;
+						/*
+						* Include the Post-Type-specific template for the content.
+						* If you want to override this in a child theme, then include a file
+						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						*/
+						get_template_part( 'template-parts/content', get_post_type() );
 
-			the_posts_navigation();
+					endwhile;
 
-		else :
+					the_posts_navigation();
 
-			get_template_part( 'template-parts/content', 'none' );
+				else :
 
-		endif;
-		?>
+					get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				endif;
+				?>
+
+				</main><!-- #main -->
+			</div><!-- #primary -->
+		</div>
+		<!-- end main content -->
+
+		<!-- right sidebar -->
+		<div class="three wide column">
+			<?php get_sidebar( 'right' ); ?>
+		</div>
+		<!-- end right sidebar -->
+	</div>
+	<!-- end container -->
 
 <?php
-    get_sidebar( 'right' );
     get_footer();
 ?>
 
