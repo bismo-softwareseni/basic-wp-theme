@@ -38,6 +38,14 @@
 					endif;
 
 					/* Start the Loop */
+
+					//-- limit the posts amount per page
+					if( function_exists( 'of_get_option' ) ) {
+						if( of_get_option( 'ss_blank_post_limit', '5' ) > 0 ) {
+							query_posts( 'posts_per_page=' . of_get_option( 'ss_blank_post_limit', '5' ) );
+						}
+					}
+
 					while ( have_posts() ) :
 						the_post();
 
@@ -50,8 +58,10 @@
 
 					endwhile;
 
-					the_posts_navigation();
-
+					echo '<div class="post-nav-container">' . the_posts_navigation() . '</div>';
+					
+					//-- Reset Query
+					wp_reset_query();
 				else :
 
 					get_template_part( 'template-parts/content', 'none' );
