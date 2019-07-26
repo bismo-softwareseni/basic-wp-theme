@@ -34,7 +34,7 @@
     //-- check whether maintenance mode enabled or not
     if( function_exists( 'of_get_option' ) ) {
         if( of_get_option( 'ss_blank_maintenance_mode', '0' ) == '1' ) {
-            add_action( 'get_header', array( $ss_bt_main_class, 'ssBlankThemeMaintenance' ) );
+            add_action( 'init', array( $ss_bt_main_class, 'ssBlankThemeMaintenance' ) );
         }
     }
 ?>
