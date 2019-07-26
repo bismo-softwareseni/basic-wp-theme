@@ -9,8 +9,16 @@
     Text Domain: ssblanktheme
 */
 
+.header-main {
+    background: #f2f2f2;
+}
 .post-thumbnail-container img {
     display: block;
     max-width: 100%;
+    height: auto;
+}
+.img-logo {
+    display: block;
+    width: 100px;
     height: auto;
 }

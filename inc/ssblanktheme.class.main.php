@@ -81,28 +81,36 @@
 	        <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php
         }
+    }
 
-        //-- function to show menu, altering the default WP menu structure to become Semantic UI
-        function ssBlankThemeShowMenu( $ss_menu_name ) {
-            if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $ss_menu_name ] ) ) {
-                $menu = wp_get_nav_menu_object( $locations[ $ss_menu_name ] );
-                $menu_items = wp_get_nav_menu_items($menu->term_id);
-                echo '<nav class="ui menu">';
-                echo '<div class="right menu">';
-                    foreach ( (array) $menu_items as $key => $menu_item ) {
-                        $title = $menu_item->title;
-                        $url = $menu_item->url;
-                        $class = $menu_item->classes; // get array with class names
-                        if ( get_the_ID() == $menu_item->object_id ) { // check for current page
-                            echo '<a class="item active" href="' . $url . '">';
-                        } else {
-                            echo '<a class="item" href="' . $url . '">';
-                        }
-                            echo $title;
-                        echo '</a>';
-                    }
-                echo '</div>';
-                echo '</nav>';
+
+    /**
+     * Walker class to change WP navigation menu to follow 
+     * Semantic UI structure
+     */
+    class SS_Blank_Theme_Menu_Walker extends Walker_Nav_Menu {
+
+        //-- start element
+        function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 ) {            
+            $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
+
+            //-- set to SPAN if no Permalink
+            if( $item->url && $item->url != '#' ) {
+                $output .= '<a href="' . $item->url . '">';
+            } else {
+                $output .= '<span>';
+            }
+
+            $output .= $item->title;
+
+            if( $item->description != '' && $depth == 0 ) {
+                $output .= '<small class="description">' . $item->description . '</small>';
+            }
+
+            if( $item->url && $item->url != '#' ) {
+                $output .= '</a>';
+            } else {
+                $output .= '</span>';
             }
         }
     }
