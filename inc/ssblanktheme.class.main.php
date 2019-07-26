@@ -111,7 +111,7 @@
     class SS_Blank_Theme_Menu_Walker extends Walker_Nav_Menu {
 
         //-- start element
-        function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 ) {            
+        function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 ) {
             $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
 
             //-- set to SPAN if no Permalink

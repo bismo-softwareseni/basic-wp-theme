@@ -45,12 +45,14 @@
             <!-- main menu -->
             <nav class="thirteen wide column">
                 
-                <?php 
-                    wp_nav_menu( array(
-                        'theme_location' => 'ssbt-menu-main',
-                        'menu_class'     => 'primary-menu',
-                        'walker'         => new SS_Blank_Theme_Menu_Walker()
-                    ) );
+                <?php
+                    if( has_nav_menu( 'ssbt-menu-main' ) ) {
+                        wp_nav_menu( array(
+                            'theme_location' => 'ssbt-menu-main',
+                            'menu_class'     => 'primary-menu',
+                            'walker'         => new SS_Blank_Theme_Menu_Walker()
+                        ) );
+                    } 
                 ?>
             </nav>
             <!-- end main menu -->
