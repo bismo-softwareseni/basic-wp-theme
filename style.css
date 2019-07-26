@@ -9,7 +9,8 @@
     Text Domain: ssblanktheme
 */
 
-.header-main {
+.header-main, 
+footer {
     background: #f2f2f2;
 }
 .post-thumbnail-container img {
@@ -21,4 +22,20 @@
     display: block;
     width: 100px;
     height: auto;
+}
+footer {
+    padding-top: 50px;
+}
+footer .blog-desc {
+    padding-bottom: 50px;   
+}
+.copyright-container {
+    position: relative;
+    float: left;
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 5px 0;
+    background: #a7a7a7;
 }

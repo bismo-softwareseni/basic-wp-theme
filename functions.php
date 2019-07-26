@@ -30,4 +30,11 @@
             add_action( 'wp_head', array( $ss_bt_main_class, 'ssBlankThemeAddMetaTags' ) );
         }
     }
+
+    //-- check whether maintenance mode enabled or not
+    if( function_exists( 'of_get_option' ) ) {
+        if( of_get_option( 'ss_blank_maintenance_mode', '0' ) == '1' ) {
+            add_action( 'get_header', array( $ss_bt_main_class, 'ssBlankThemeMaintenance' ) );
+        }
+    }
 ?>
