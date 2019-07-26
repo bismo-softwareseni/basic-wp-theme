@@ -12,7 +12,7 @@
     //-- header 
 	get_header();
 ?>
-
+	
 	<!-- container -->
 	<div class="ui grid container" style="margin-top: 50px;">
 		<!-- left sidebar -->
