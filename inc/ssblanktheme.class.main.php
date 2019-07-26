@@ -88,6 +88,19 @@
                 wp_die( '<h1>Under Maintenance</h1><br />Something aint right, but were working on it! Check back later.' );
             }
         }
+
+        //-- function to get sidebar visibility from options framework
+        function ssBlankSidebarVisibility( $sidebar_id ) {
+            $ss_hide_sidebar = false;
+
+            if( function_exists( 'of_get_option' ) && !empty( of_get_option( 'ss_blank_sidebars_visibility', '0' ) ) ) {
+                if( of_get_option( 'ss_blank_sidebars_visibility', '0' )[ $sidebar_id ] == '0' ) {
+                    $ss_hide_sidebar = true;
+                }
+            }
+
+            return $ss_hide_sidebar;
+        }
     }
 
 

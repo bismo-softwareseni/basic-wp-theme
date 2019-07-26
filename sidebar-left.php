@@ -3,7 +3,10 @@
      * This is left sidebar
      */
 
-    if ( !is_active_sidebar( 'ssbt-sidebar-left' ) ) {
+    //-- import main class
+    global $ss_bt_main_class;
+
+    if ( !is_active_sidebar( 'ssbt-sidebar-left' ) || $ss_bt_main_class->ssBlankSidebarVisibility( 'ssbt-sidebar-left' ) ) {
         return;
     } else {
 ?>

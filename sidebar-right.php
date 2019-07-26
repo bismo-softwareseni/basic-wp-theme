@@ -3,7 +3,10 @@
      * This is right sidebar
      */
 
-    if ( !is_active_sidebar( 'ssbt-sidebar-right' ) ) {
+    //-- import main class
+    global $ss_bt_main_class;
+
+    if ( !is_active_sidebar( 'ssbt-sidebar-right' ) || $ss_bt_main_class->ssBlankSidebarVisibility( 'ssbt-sidebar-right' ) ) {
         return;
     } else {
 ?>
