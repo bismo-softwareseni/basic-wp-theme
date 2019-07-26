@@ -40,7 +40,7 @@
 					/* Start the Loop */
 
 					//-- limit the posts amount per page
-					if( function_exists( 'of_get_option' ) ) {
+					if( function_exists( 'of_get_option' ) && !is_singular() ) {
 						if( of_get_option( 'ss_blank_post_limit', '5' ) > 0 ) {
 							query_posts( 'posts_per_page=' . of_get_option( 'ss_blank_post_limit', '5' ) );
 						}
