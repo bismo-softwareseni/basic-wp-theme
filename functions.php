@@ -8,6 +8,11 @@
         $ss_bt_main_class = new SS_Blank_Theme_Main();
     }
 
+    //-- import plugin.php to check whether a plugin is active or not ( for use on front end only )
+    if( !function_exists( 'is_plugin_active' ) ) {
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    }
+
     //-- setup the theme
     if( !empty( $ss_bt_main_class ) ) {
         //-- theme support, load text domain, register menus

@@ -1,0 +1,60 @@
+/*
+    Theme Name: SoftwareSeni Blank Theme 
+    Theme URI: https://www.softwareseni.co.id/
+    Author: SoftwareSeni
+    Description: Understanding about WordPress themes and how to build it from scratch
+    Version: 1.0
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Text Domain: ssblanktheme
+*/
+/**
+* --------------------------------------------------------
+* IMPORT GOOGLE FONT
+* --------------------------------------------------------
+**/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
+.header-main,
+footer {
+  background: #f2f2f2;
+}
+
+.post-thumbnail-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-logo {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+footer {
+  padding-top: 50px;
+}
+
+footer .blog-desc {
+  padding-bottom: 50px;
+}
+
+.copyright-container {
+  position: relative;
+  float: left;
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+  background: #a7a7a7;
+}
+
+.posts-navigation {
+  margin: 100px 0 50px 0;
+}
+
+nav .menu-main-menu-container {
+  background: red;
+}
+/*# sourceMappingURL=style.css.map */
